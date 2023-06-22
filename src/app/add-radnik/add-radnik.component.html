@@ -1,0 +1,33 @@
+<form    [formGroup]="form">
+<input   placeholder="Unesite ime"  formControlName="ime" id="ime"  >
+<input    placeholder="Unesite prezime"  formControlName="prezime" id="prezime"  >
+<input    placeholder="Unesite lozinku"  formControlName="lozinka"  id="lozinka" >
+<button   (click)="AddRadnik()"   >Dodaj Radnika</button>
+<select  formControlName="idPosla" >
+<option    *ngFor="let posao of poslovi;index as i " [selected]="i==1"   [ngValue]="posao.id"    >{{posao.naziv}}</option>
+
+</select>
+<div   *ngIf="Ime?.touched"    >
+    <div    [style.backgroundColor]="'red'" *ngIf="Ime?.errors?.['required']" >Ime je obavezno</div> 
+    <div    [style.backgroundColor]="'red'" *ngIf="Ime?.errors?.['ne']" >Ime ne sme da sadrzi @</div>  
+   </div>
+   
+   
+   <div   *ngIf="Prezime?.touched"    >
+       <div  [style.backgroundColor]="'red'" *ngIf="Prezime?.errors?.['minlength'] ||Prezime?.errors?.['required'] " >Prezime mora imati najmanje tri slova</div> 
+         
+      </div>
+
+
+      <div   *ngIf="Lozinka?.touched"    >
+        <div  [style.backgroundColor]="'red'" *ngIf="Lozinka?.errors?.['ne2']" >Lozinka ne sme da sadrzi slova</div>
+        <div  [style.backgroundColor]="'red'" *ngIf="Lozinka?.errors?.['ne3']" >Prvo broj mora da bude nula</div>      
+       </div>
+</form>
+<app-jedan-podatak (promeni)="onEmit($event)"  [item]="Ime?.value!"  >
+
+
+</app-jedan-podatak>
+
+
+<p>{{text}}</p>

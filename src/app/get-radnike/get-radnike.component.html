@@ -1,0 +1,26 @@
+<h1>Broj query parametra je :{{paramNum}}</h1>
+<input  type="text"   IzmeniBroj placeholder="Unesite broj"  />
+<input  type="text" (keydown.enter)="FilterData()"   [(ngModel)]="filterData" placeholder="Pretrazite ime ili posao"  />
+<table>
+<tr>
+<th>Id</th>
+<th>Ime</th>
+<th>Prezime</th>
+<th>Lozinka</th>
+<th>Vrsta posla</th>
+<th>Pipe</th>
+</tr>
+<tr   *ngFor="let radnik of radnici"   >
+<td>{{radnik.id}}</td>
+<td>{{radnik.ime}}</td>
+<td>{{radnik.prezime}}</td>
+<td>{{radnik.lozinka}}</td>
+<td>{{radnik.naziv}}</td>
+<td>{{radnik.ime|custom }}</td>
+<button   (click)="DeleteRadnik(radnik.id)"  class="btn btn-primary" >Izbrisi radnika</button>
+<button   (click)="UpdateRadnik(radnik.id)"  >Izmeni radnika</button>
+</tr>
+
+
+</table>
+<h1>{{filterData}}</h1>

@@ -1,0 +1,8 @@
+<nav class="nav justify-content-center  ">
+<ul>
+ <li  [routerLink]="'addRadnik'"  *ngIf="isLoged()==null" >Dodaj Radnika</li>
+ <li  [routerLink]="'getRadnike'"    *ngIf="isLoged()" >Lista radnika</li>   
+ <li  [routerLink]="'login'" *ngIf="isLoged()==null" >Ulogujte se</li> 
+ <button  (click)="logout()" *ngIf="isLoged()" >Izlogujte se </button>  
+</ul>
+</nav>
