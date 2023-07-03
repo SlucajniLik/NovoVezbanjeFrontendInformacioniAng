@@ -14,6 +14,8 @@ import { CustomPipe } from './custom.pipe';
 import { JedanPodatakComponent } from './jedan-podatak/jedan-podatak.component';
 import { LogovanjeComponent } from './logovanje/logovanje.component';
 import { AuthGuard } from './auth.guard';
+import { ColorPipe } from './color.pipe';
+import { CheckAgeDirective } from './check-age.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,9 @@ import { AuthGuard } from './auth.guard';
     IzmeniBrojDirective,
     CustomPipe,
     JedanPodatakComponent,
-    LogovanjeComponent
+    LogovanjeComponent,
+    ColorPipe,
+    CheckAgeDirective
   ],
   imports: [
     BrowserModule,

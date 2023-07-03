@@ -1,5 +1,6 @@
 <h1>Broj query parametra je :{{paramNum}}</h1>
-<input  type="text"   IzmeniBroj placeholder="Unesite broj"  />
+<input  type="text"   [appCheckAge]="num"    [(ngModel)]="num"  IzmeniBroj placeholder="Unesite broj"  />
+
 <input  type="text" (keydown.enter)="FilterData()"   [(ngModel)]="filterData" placeholder="Pretrazite ime ili posao"  />
 <table>
 <tr>
@@ -11,9 +12,9 @@
 <th>Pipe</th>
 </tr>
 <tr   *ngFor="let radnik of radnici"   >
-<td>{{radnik.id}}</td>
-<td>{{radnik.ime}}</td>
-<td>{{radnik.prezime}}</td>
+<td  [bgColor]="'prva'|color"      >{{radnik.id}}</td>
+<td   [bgColor]="'druga'|color"   >{{radnik.ime}}</td>
+<td      [bgColor]="'treca'|color">{{radnik.prezime}}</td>
 <td>{{radnik.lozinka}}</td>
 <td>{{radnik.naziv}}</td>
 <td>{{radnik.ime|custom }}</td>

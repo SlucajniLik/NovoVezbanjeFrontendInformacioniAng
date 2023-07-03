@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class GetRadnikeComponent implements OnInit {
 
 radnici?:any[]
-
+num:any
   constructor(private radServ:RadnikService,private router:Router,private route:ActivatedRoute)
   {
 
